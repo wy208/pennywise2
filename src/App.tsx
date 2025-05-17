@@ -33,7 +33,7 @@ import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import ExpensePage from "./expensepage";
 import SummaryPage from "./summarypage";
 
-import logo from "./images/pennywise_logo.png"
+//import logo from "./images/pennywise_logo.png"
 
 
 function About() {
@@ -45,9 +45,9 @@ function App() {
   const [expenses, setExpenses] = useState<Expense[]>([]);
 
   return (
-    <Router basename="/pennywise2">
+    <Router basename="/wy208">
       <div>
-        <img src={logo} alt="logo" />
+        
       </div>
       <nav>
         <ul>
