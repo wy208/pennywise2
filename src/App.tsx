@@ -45,7 +45,7 @@ function App() {
   const [expenses, setExpenses] = useState<Expense[]>([]);
 
   return (
-    <Router>
+    <Router basename="{process.env.PUBLIC_URL}">
       <div>
         <img src={logo} alt="logo" />
       </div>
