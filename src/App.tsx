@@ -45,7 +45,7 @@ function App() {
   const [expenses, setExpenses] = useState<Expense[]>([]);
 
   return (
-    <Router basename="/wy208">
+    <Router basename={process.env.PUBLIC_URL}>
       <div>
         
       </div>
@@ -67,18 +67,7 @@ function App() {
         <Route path="/summary" element={<SummaryPage
           expenses={expenses} />} />
       </Routes>
-    
-      {/* <div className="App">
-        <h1>PennyWise</h1>
-        <main>
-          <ExpenseManager 
-            expenses={expenses} 
-            setExpenses={setExpenses}/>
-        </main>
-        <SummaryCalc 
-            expenses={expenses} />
-
-      </div> */}
+      
       
     </Router>
     
