@@ -36,6 +36,10 @@ import SummaryPage from "./summarypage";
 import logo from "./images/pennywise_logo.png"
 
 
+function About() {
+  return <h2>About Page</h2>;
+}
+
 function App() {
   //storing the list of all expenses added
   const [expenses, setExpenses] = useState<Expense[]>([]);
