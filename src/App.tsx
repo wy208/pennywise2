@@ -32,6 +32,7 @@ import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 
 import ExpensePage from "./expensepage";
 import SummaryPage from "./summarypage";
+import BudgetPage from "./budgetpage";
 
 import logo from "./images/pennywise_logo.png"
 
@@ -57,6 +58,9 @@ function App() {
           <li>
             <Link to="/summary">Summary</Link>
           </li>
+          <li>
+            <Link to="/budget">Budget and Challenges</Link>
+          </li>
         </ul>
       </nav>
 
@@ -66,6 +70,7 @@ function App() {
           setExpenses={setExpenses}/>} />
         <Route path="/summary" element={<SummaryPage
           expenses={expenses} />} />
+        <Route path="/budget" element={<BudgetPage/> } />
       </Routes>
     
       {/* <div className="App">
