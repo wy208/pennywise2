@@ -25,8 +25,6 @@ export default App;*/
 import "./App.css";
 import { useState } from "react";
 import { Expense } from "./types";
-import ExpenseManager from "./components/ExpenseManager";
-import SummaryCalc from "./components/SummaryCalc"
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 
@@ -36,14 +34,22 @@ import BudgetPage from "./budgetpage";
 
 import logo from "./images/pennywise_logo.png"
 
-
-function About() {
-  return <h2>About Page</h2>;
-}
-
 function App() {
   //storing the list of all expenses added
   const [expenses, setExpenses] = useState<Expense[]>([]);
+
+  //for budgeting
+  const [budget, setBudget] = useState<number | null>(null);
+  const [totalSpending, setTotalSpending] = useState(0); // You'll need to track this from expenses
+
+  const handleBudgetChange = (newBudget: number) => {
+    setBudget(newBudget);
+  }
+
+  const handleAddExpense = (expense: Expense) => {
+    setExpenses([...expenses, expense]);
+    setTotalSpending(prev => prev + Number(expense.amount));
+  };
 
   return (
     <Router basename={process.env.PUBLIC_URL}>
@@ -65,28 +71,21 @@ function App() {
       </nav>
 
       <Routes>
-        <Route path="/" element={<ExpensePage 
-          expenses={expenses} 
-          setExpenses={setExpenses}/>} />
-        <Route path="/summary" element={<SummaryPage
-          expenses={expenses} />} />
-        <Route path="/budget" element={<BudgetPage/> } />
-      </Routes>
-    
-      {/* <div className="App">
-        <h1>PennyWise</h1>
-        <main>
-          <ExpenseManager 
+        <Route path="/" element={
+          <ExpensePage 
             expenses={expenses} 
-            setExpenses={setExpenses}/>
-        </main>
-        <SummaryCalc 
-            expenses={expenses} />
-
-      </div> */}
-      
+            setExpenses={setExpenses}/>} />
+        <Route path="/summary" element={
+          <SummaryPage
+            expenses={expenses} />} />
+        <Route path="/budget" element={
+          <BudgetPage 
+            budget={budget} 
+            onBudgetChange={handleBudgetChange}
+            totalSpending={totalSpending}/> } />
+      </Routes>     
     </Router>
-    
+  
   );
 }
  

@@ -1,4 +1,3 @@
-// ExpenseManager.tsx
 import { useState, ChangeEvent, FormEvent } from "react";
 import { Expense } from "../types";
 import ExpenseComponent from "./ExpenseComponent";
@@ -44,7 +43,7 @@ const ExpenseManager = ({ expenses, setExpenses }: ExpenseManagerProps) => {
       item: "",
       amount: "",
       date: "",
-      note: ""
+      note:""
       });
   };
 
