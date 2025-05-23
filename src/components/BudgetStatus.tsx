@@ -1,4 +1,4 @@
-import { PieChart, Pie, BarChart, Bar, XAxis, YAxis, Tooltip, Legend, Cell } from 'recharts';
+import { PieChart, Pie, Tooltip, Cell } from 'recharts';
 
 interface BudgetStatusProps {
   budget: number | null;

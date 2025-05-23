@@ -1,4 +1,3 @@
-import React from 'react';
 import SetBudget from './components/SetBudget';
 import SetGoal from './components/SetGoal';
 import BudgetStatus from './components/BudgetStatus';

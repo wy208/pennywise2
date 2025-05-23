@@ -1,31 +1,6 @@
-/*import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return(
-    <div>
-      <h2>Add Expense</h2>
-      <div>
-          <p>Item: </p>
-          <input type="text" />
-          <p>Amount: </p>
-          <input type="text" />
-          <p>Date: </p>
-          <input type="text" />
-          <button>Add</button>
-      </div>
-      
-    </div>
-  );
-}
-
-export default App;*/
-
 import "./App.css";
 import { useState } from "react";
 import { Expense } from "./types";
-import React from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 
 import ExpensePage from "./expensepage";
